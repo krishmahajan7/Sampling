@@ -85,7 +85,6 @@ All accuracy values are stored in a comparison table for further analysis.
 ---
 
 ## Visual Analysis and Plots
-To better understand the results, several plots and graphs were generated and saved as PNG files:
 
 - **Accuracy Comparison Line Plot**  
 <img width="2557" height="1638" alt="sampling_vs_models_accuracy" src="https://github.com/user-attachments/assets/0faa01e8-458d-4d2b-a97e-9dacd9f40640" />
@@ -102,7 +101,7 @@ To better understand the results, several plots and graphs were generated and sa
 <img width="2087" height="1407" alt="best_sampling_per_model" src="https://github.com/user-attachments/assets/d77f9676-5cb1-43f8-91bd-645c99fde440" />
 
 ---
-- **Sampling Ranking Graph)**  
+- **Sampling Ranking (Graph)**  
  <img width="2060" height="1407" alt="sampling_ranking" src="https://github.com/user-attachments/assets/9388ae6a-dcee-4998-8d76-74c76fb54409" />
 
 ---
@@ -116,7 +115,6 @@ To better understand the results, several plots and graphs were generated and sa
  <img width="2552" height="1659" alt="sampling_bar_plot" src="https://github.com/user-attachments/assets/f63b747e-83dd-43a0-bb60-4d8cf53e0259" />
 
 
-These visualizations make it easier to interpret trends and compare results.
 
 ---
 

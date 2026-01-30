@@ -1,107 +1,154 @@
-# Sampling Techniques Analysis on Imbalanced Dataset
+# Sampling Techniques Analysis on an Imbalanced Credit Card Dataset
 
-## 📌 Project Overview
-This project analyzes the effect of different **sampling techniques** on the performance of various **machine learning models** using a **highly imbalanced credit card dataset**.  
-The dataset is first balanced using random undersampling, after which multiple sampling strategies are applied and evaluated.
+## Project Overview
+In this project, an experimental study is carried out to understand how **different sampling techniques** affect the performance of **machine learning classification models** when working with a **highly imbalanced dataset**.  
 
----
+The dataset used is a credit card transaction dataset where fraudulent transactions are very rare compared to non-fraudulent ones. Such imbalance can cause machine learning models to become biased toward the majority class. To address this issue, the dataset is first balanced and then multiple sampling strategies are applied and evaluated.
 
-## 📂 Dataset
-- **Name:** Credit Card Fraud Detection Dataset  
-- **Target Column:** `Class`  
-  - `0` → Non-Fraud  
-  - `1` → Fraud  
-
-The original dataset is highly imbalanced, making it unsuitable for direct model training.
+The main goal of this project is to compare sampling techniques and analyze which sampling method works best with different machine learning models.
 
 ---
 
-## ⚙️ Libraries Used
-- Python  
-- Pandas  
-- NumPy  
-- Scikit-learn  
-- Matplotlib  
+## Dataset Description
+- **Dataset Name:** Credit Card Fraud Detection Dataset  
+- **Target Attribute:** `Class`  
+  - `0` → Legitimate (Non-Fraud) transaction  
+  - `1` → Fraudulent transaction  
+
+Initially, the dataset contains a very large number of non-fraud transactions and a very small number of fraud transactions. This imbalance makes it unsuitable for direct model training without preprocessing.
 
 ---
 
-## 🔄 Data Preprocessing
+## Libraries and Tools Used
+The following Python libraries were used during implementation:
 
-### 1️⃣ Balancing the Dataset
-The dataset is balanced using **random undersampling**:
-- Majority class samples are reduced
-- Minority class samples are retained
-- Final dataset contains equal instances of both classes
-
-This prevents model bias towards the majority class.
+- **Pandas** – data loading and manipulation  
+- **NumPy** – numerical operations  
+- **Scikit-learn** – sampling methods, model training, and evaluation  
+- **Matplotlib** – visualization of results  
 
 ---
 
-## 🔁 Sampling Techniques Implemented
+## Data Preprocessing
 
-Five different sampling techniques are applied to the balanced dataset:
+### Balancing the Dataset
+Before applying sampling techniques, the dataset is converted into a balanced dataset using **random undersampling**.  
 
-| Sampling ID | Technique |
-|------------|----------|
+In this step:
+- Samples from the majority class (`Class = 0`) are reduced
+- All samples from the minority class (`Class = 1`) are retained
+- The final dataset contains an equal number of fraud and non-fraud records
+
+Balancing the dataset helps reduce bias and allows machine learning models to learn meaningful patterns from both classes.
+
+---
+
+## Sampling Techniques Applied
+After balancing, five different sampling techniques are applied to create multiple samples of the data. Each technique follows a different selection strategy.
+
+| Sampling ID | Sampling Technique |
+|------------|-------------------|
 | Sampling1 | Simple Random Sampling |
-| Sampling2 | Stratified Sampling |
+| Sampling2 | Stratified Random Sampling |
 | Sampling3 | Bootstrap Sampling |
 | Sampling4 | Systematic Sampling |
 | Sampling5 | Cluster Sampling |
 
-Each sampling technique follows a distinct strategy, allowing comparative analysis.
+These techniques were chosen to represent a wide variety of sampling approaches, including random selection, proportion-preserving sampling, sampling with replacement, interval-based sampling, and group-based sampling.
 
 ---
 
-## 🤖 Machine Learning Models Used
+## Machine Learning Models Used
+Each sampled dataset is used to train the following machine learning models:
 
 | Model ID | Algorithm |
 |--------|----------|
 | M1 | Logistic Regression |
-| M2 | Decision Tree |
-| M3 | Random Forest |
-| M4 | K-Nearest Neighbors |
-| M5 | Support Vector Machine |
+| M2 | Decision Tree Classifier |
+| M3 | Random Forest Classifier |
+| M4 | K-Nearest Neighbors (KNN) |
+| M5 | Support Vector Machine (SVM) |
+
+This combination allows analysis of how sampling methods interact with both linear and non-linear models.
 
 ---
 
-## 📊 Model Training & Evaluation
-- Each sampled dataset is split into **70% training** and **30% testing**
-- Models are trained independently on each sample
-- **Accuracy (%)** is used as the evaluation metric
-- Results are stored in a comparison table
+## Model Training and Evaluation
+For every sampling technique:
+- The sampled dataset is split into **70% training data** and **30% testing data**
+- Each model is trained independently on the training set
+- Predictions are made on the test set
+- **Accuracy (%)** is calculated as the evaluation metric
+
+All accuracy values are stored in a comparison table for further analysis.
 
 ---
 
-## 📈 Visual Analysis
-
-The following plots were generated to analyze model performance:
+## Visual Analysis and Plots
+To better understand the results, several plots and graphs were generated and saved as PNG files:
 
 - **Accuracy Comparison Line Plot**  
-  `sampling_vs_models_accuracy.png`
+<img width="2557" height="1638" alt="sampling_vs_models_accuracy" src="https://github.com/user-attachments/assets/0faa01e8-458d-4d2b-a97e-9dacd9f40640" />
+
+---
 
 - **Average Accuracy per Sampling Technique**  
-  `average_accuracy_sampling.png`
-
-- **Best Sampling Technique per Model**  
-  `best_sampling_per_model.png`
-
-- **Accuracy Heatmap (Models vs Sampling)**  
-  `accuracy_heatmap.png`
-
-- **Sampling Technique Stability (Variance Plot)**  
-  `sampling_variance.png`
-
-All plots are saved as PNG files in the repository.
+<img width="2060" height="1407" alt="average_accuracy_sampling" src="https://github.com/user-attachments/assets/dd6458ab-a523-4039-bc8d-afa7ae4668be" />
 
 ---
 
-## 🏆 Results Summary
-The analysis shows that:
-- No single sampling technique performs best for all models
-- Bootstrap and Cluster sampling perform well across multiple models
-- Model performance is highly dependent on the chosen sampling strategy
+- **Best Sampling Technique per Model**
+  
+<img width="2087" height="1407" alt="best_sampling_per_model" src="https://github.com/user-attachments/assets/d77f9676-5cb1-43f8-91bd-645c99fde440" />
+
+---
+- **Sampling Ranking Graph)**  
+ <img width="2060" height="1407" alt="sampling_ranking" src="https://github.com/user-attachments/assets/9388ae6a-dcee-4998-8d76-74c76fb54409" />
 
 ---
 
-## 📁 Project Structure
+- **Sampling Technique Stability Plot (Variance)**  
+<img width="2087" height="1407" alt="sampling_variance" src="https://github.com/user-attachments/assets/98f3bbd1-024a-4ed0-9669-25780056b575" />
+
+  ---
+
+  - **Accuracy of Several Sampling Techniques**  
+ <img width="2552" height="1659" alt="sampling_bar_plot" src="https://github.com/user-attachments/assets/f63b747e-83dd-43a0-bb60-4d8cf53e0259" />
+
+
+These visualizations make it easier to interpret trends and compare results.
+
+---
+
+## Results and Observations
+From the experimental results, the following observations were made:
+
+- No single sampling technique provides the highest accuracy for all models
+- Bootstrap Sampling and Cluster Sampling perform well for multiple models
+- Some models are highly sensitive to the choice of sampling technique
+- Sampling strategy plays a crucial role in model performance on imbalanced data
+
+---
+
+## Project Structure
+---
+├── Creditcard_data.csv
+├── sampling_analysis.ipynb
+├── README.md
+├── sampling_vs_models_accuracy.png
+├── average_accuracy_sampling.png
+├── best_sampling_per_model.png
+├── accuracy_heatmap.png
+├── sampling_variance.png
+
+
+---
+
+## Conclusion
+This project demonstrates that handling imbalanced datasets requires careful selection of sampling techniques. Different machine learning models respond differently to various sampling strategies, and therefore, choosing an appropriate sampling method is essential for achieving reliable and accurate predictions.
+
+---
+
+## Author
+**Krish Mahajan**
+

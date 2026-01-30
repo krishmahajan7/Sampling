@@ -123,32 +123,19 @@ These visualizations make it easier to interpret trends and compare results.
 ## Results and Observations
 From the experimental results, the following observations were made:
 
-- No single sampling technique provides the highest accuracy for all models
 - Bootstrap Sampling and Cluster Sampling perform well for multiple models
 - Some models are highly sensitive to the choice of sampling technique
 - Sampling strategy plays a crucial role in model performance on imbalanced data
 
 ---
 
-## Project Structure
----
-├── Creditcard_data.csv
-├── sampling_analysis.ipynb
-├── README.md
-├── sampling_vs_models_accuracy.png
-├── average_accuracy_sampling.png
-├── best_sampling_per_model.png
-├── accuracy_heatmap.png
-├── sampling_variance.png
-
-
----
-
 ## Conclusion
-This project demonstrates that handling imbalanced datasets requires careful selection of sampling techniques. Different machine learning models respond differently to various sampling strategies, and therefore, choosing an appropriate sampling method is essential for achieving reliable and accurate predictions.
+The study demonstrates that careful selection of sampling techniques is essential, since different models react differently and significantly affect prediction reliability.
 
 ---
 
 ## Author
 **Krish Mahajan**
 
+## License 
+This project is open-source and available under the MIT License.
